@@ -9,6 +9,7 @@ describe("User model", () => {
     Object.assign(user, {
       name: "Atlas",
       email: "atlas@fromspace.com",
+      admin: false,
       created_at: new Date(),
       updated_at: new Date(),
     });

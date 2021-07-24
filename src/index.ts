@@ -13,8 +13,6 @@ app.use("/users", usersRoutes);
 
 app.use(
   (err: Error, request: Request, response: Response, _next: NextFunction) => {
-    console.log("' errerroo fuja fuja'");
-    console.log("o erro é", err);
     if (err instanceof AppError) {
       return response.status(err.statusCode).json({
         message: err.message,
