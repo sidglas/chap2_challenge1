@@ -12,15 +12,13 @@ class ListAllUsersUseCase {
   execute({ user_id }: IRequest): User[] {
     const adminUser = this.usersRepository.findById(user_id);
     if (!adminUser) {
-      throw new AppError(
-        "should not be able to a non existing user get list of all users",
-        400
+      throw new Error(
+        "should not be able to a non existing user get list of all users"
       );
     }
     if (!adminUser.admin) {
-      throw new AppError(
-        "should not be able to a non admin user get list of all users",
-        400
+      throw new Error(
+        "should not be able to a non admin user get list of all users"
       );
     }
     const users = this.usersRepository.list();

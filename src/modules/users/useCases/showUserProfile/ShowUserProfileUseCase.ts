@@ -16,7 +16,7 @@ class ShowUserProfileUseCase {
     const user = this.usersRepository.findById(user_id);
 
     if (!user) {
-      throw new AppError("User not found", 404);
+      throw new Error("User not found");
     }
     return user;
   }
