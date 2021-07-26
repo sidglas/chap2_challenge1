@@ -26,7 +26,6 @@ class CreateUserUseCase {
       name,
       email,
     });
-    console.log("usuario criado", created);
     return created;
   }
 }
